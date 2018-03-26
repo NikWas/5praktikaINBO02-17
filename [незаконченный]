@@ -1,0 +1,61 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+void bsort(int a[], int b)
+{
+    for(int i=0; i<b; i++)
+        for(int j=0; j<b-1; j++)
+            if(a[j] < a[j+1])
+            {
+                int tmp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = tmp;
+            }
+}
+
+void bsort (float a[], int b)
+{
+    for(int i=0; i<b; i++)
+        for(int j=0; j<b-1; j++)
+            if(a[j] < a[j+1])
+            {
+                float tmp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = tmp;
+            }
+}
+
+void bsort (double a[], int b)
+{
+    for(int i=0; i<b; i++)
+        for(int j=0; j<b-1; j++)
+            if(a[j] < a[j+1])
+            {
+                double tmp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = tmp;
+            }
+}
+
+int main()
+{
+    srand(time(NULL));
+    int n, i;
+    cin >> n;
+    int *a1 = new int[n];
+    for (i=0; i<n; i++)
+        a1[i] = rand()%100;
+
+    cin >> n;
+    float *a2 = new float[n];
+    for (i=0; i<n; i++)
+        a1[i] = rand()%100;
+
+    cin >> n;
+    double *a3 = new double[n];
+    for (i=0; i<n; i++)
+        a1[i] = rand()%100;
+    return 0;
+}
